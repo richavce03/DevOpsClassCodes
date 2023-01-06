@@ -421,17 +421,17 @@
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>cobertura-maven-plugin</artifactId>
                         <version>${cobertura.version}</version>
-			<exclusions>
-			    <exclusion>
-				<groupId>com.sun</groupId>
-				<artifactId>tools</artifactId>
-			    </exclusion>
-			</exclusions>
+			
                         <configuration>
                             <formats>
                                 <format>html</format>
                                 <format>xml</format>
                             </formats>
+			<instrumentation>
+			    <excludes>
+				<exclude>test/co/**/*</exclude>
+			    </excludes>
+			</instrumentation>
                         </configuration>
                     </plugin>
                     <plugin>
